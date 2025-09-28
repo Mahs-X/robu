@@ -6,6 +6,7 @@ import CourseStructure from "./components/course";
 import ContactPage from "./components/contact";
 import Review from "./components/review";
 import Footer from "./components/footer";
+import Head from "next/head";
 
 export const metadata = {
   title: "রবি সায়েন্স কোচিং সেন্টার রাজশাহী | ক্লাস ১-১০ বিজ্ঞান প্রস্তুতি",
@@ -41,6 +42,13 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+    <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="রবি সায়েন্স কোচিং সেন্টার" />
+        <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="886frThO_SX107yVFha2VM7-WF6OLQM41PdsL1VpOTU" />
+      </Head>
       {/* Hero Section */}
       <Hero />
 
