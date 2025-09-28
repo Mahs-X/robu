@@ -1,103 +1,138 @@
-import Image from "next/image";
+// app/page.js
+import React from "react";
+import Hero from "./components/hero";
+import About from "./components/about";
+import CourseStructure from "./components/course";
+import ContactPage from "./components/contact";
+import Review from "./components/review";
+import Footer from "./components/footer";
 
-export default function Home() {
+export const metadata = {
+  title: "রবি সায়েন্স কোচিং সেন্টার রাজশাহী | ক্লাস ১-১০ বিজ্ঞান প্রস্তুতি",
+  description:
+    "বরেন্দ্র বিশ্ববিদ্যালয়ের শিক্ষকদের তত্ত্বাবধানে রাজশাহীর সেরা এসএসসি বিজ্ঞান কোচিং। ৯৫% কমন শিট, ৭০+ A+ ফলাফল। বিনামূল্যে ডেমো ক্লাস বুক করুন।",
+  keywords: [
+    "রাজশাহী কোচিং সেন্টার",
+    "SSC বিজ্ঞান কোচিং",
+    "রবি সায়েন্স কোচিং",
+    "বিজ্ঞান প্রস্তুতি",
+    "এসএসসি প্রস্তুতি রাজশাহী",
+    "বরেন্দ্র বিশ্ববিদ্যালয় শিক্ষক",
+  ],
+  alternates: {
+    canonical: "https://robiscience.edu.bd",
+  },
+  openGraph: {
+    title: "রবি সায়েন্স কোচিং - রাজশাহীর সেরা বিজ্ঞান প্রস্তুতি",
+    description: "এসএসসি বিজ্ঞানে A+ নিশ্চিত করতে আজই ভর্তি হোন",
+    url: "https://robiscience.edu.bd",
+    type: "website",
+    images: [
+      {
+        url: "https://robiscience.edu.bd/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "রবি সায়েন্স কোচিং - এসএসসি বিজ্ঞান প্রস্তুতি",
+      },
+    ],
+  },
+};
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Hero Section */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* About Section */}
+      <About />
+
+      {/* Course Section */}
+      <CourseStructure />
+
+      {/* Contact Section */}
+     
+      <Review />
+ <ContactPage />
+
+ <Footer />
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "EducationalOrganization",
+                "name": "রবি সায়েন্স কোচিং সেন্টার",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Rajshahi",
+                  "addressCountry": "BD",
+                },
+                "description":
+                  "রাজশাহীর সেরা ক্লাস ১-১০ বিজ্ঞান কোচিং সেন্টার",
+                "telephone": "+880-XXXX-XXXXXX",
+                "areaServed": "Rajshahi Division",
+                "educationalLevel": "Primary and Secondary Education",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "70",
+                  "bestRating": "5",
+                  "worstRating": "1",
+                },
+                "review": [
+                  {
+                    "@type": "Review",
+                    "author": { "@type": "Person", "name": "আরিফ হোসেন" },
+                    "reviewBody":
+                      "আমার সবচেয়ে বড় সমস্যা ছিল রসায়নের কঠিন টপিকগুলো। কিন্তু স্যার এমন সহজ করে বুঝিয়ে দিতেন যে মনে হতো গল্প শুনছি। আর পরীক্ষার আগে স্যারের দেওয়া ৯৫% কমন শিট তো ম্যাজিকের মতো কাজ করেছে!",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                  },
+                  {
+                    "@type": "Review",
+                    "author": { "@type": "Person", "name": "মিসেস ফারহানা আক্তার" },
+                    "reviewBody":
+                      "আমাদের চিন্তা ছিল, এত অভিজ্ঞ শিক্ষক হয়তো খুব কঠোর হবেন। কিন্তু ক্লাস শুরুর পর দেখলাম স্যার সবার সাথে কতটা ফ্রেন্ডলি। আমার মেয়ে কোনো দ্বিধা ছাড়াই সব প্রশ্ন করতে পারে।",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                  },
+                ],
+              },
+              {
+                "@type": "Course",
+                "name": "SSC বিজ্ঞান বিভাগ (৬ মাস)",
+                "description": "পদার্থবিদ্যা, রসায়ন ও জীববিজ্ঞানে বিশেষায়িত প্রস্তুতি",
+                "provider": { "@type": "EducationalOrganization", "name": "রবি সায়েন্স কোচিং সেন্টার", "address": "Rajshahi" },
+                "hasCourseInstance": {
+                  "@type": "CourseInstance",
+                  "courseMode": "offline",
+                  "duration": "P6M",
+                  "courseSchedule": "6 days per week",
+                },
+                "offers": [
+                  { "@type": "Offer", "name": "এককালীন ফি", "price": "7000", "priceCurrency": "BDT" },
+                  { "@type": "Offer", "name": "মাসিক কিস্তি", "price": "1500", "priceCurrency": "BDT", "billingPeriod": "monthly" },
+                ],
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "রবি সায়েন্স কোচিং সেন্টার",
+                "founder": {
+                  "@type": "Person",
+                  "name": "প্রতিষ্ঠাতা শিক্ষক",
+                  "alumniOf": { "@type": "CollegeOrUniversity", "name": "বরেন্দ্র বিশ্ববিদ্যালয়" },
+                  "hasCredential": "এম.এস.সি ইন কেমিস্ট্রি",
+                  "description": "৫+ বছর শিক্ষকতা অভিজ্ঞতা",
+                },
+                "description": "রাজশাহীর প্রিমিয়াম এসএসসি বিজ্ঞান কোচিং সেন্টার",
+                "address": { "@type": "PostalAddress", "addressLocality": "Rajshahi", "addressRegion": "Rajshahi Division" },
+              },
+            ],
+          }),
+        }}
+      />
+    </>
   );
 }
